@@ -10,7 +10,7 @@ PHYSIS draws on published methods and clinical references with its main focus of
 
 **Disclaimer**
 
-Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) before using PHYSIS.
+Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and [Terms of Use](ToU.md) before using PHYSIS.
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
@@ -176,6 +176,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
 - [x] Public community repo (`doctor-dom/physis-calc`) — header Issues/Discussions/Planned Updates links; parallel Actions workflow syncs a community-safe README
+- [x] Persistent footer Terms of Use link (`/terms-of-use`) sharing the disclaimer banner, with UTC last-updated timestamp
 
 ## Clinical notes
 
