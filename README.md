@@ -35,51 +35,84 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 
 **C**omprehensive **A**ction-**L**everaging **C**alculator **S**uite
 
-### Electrolytes (`/calculators/electrolytes`)
+### Electrolytes/Fluids (`/calculators/electrolytes`)
 
 | Tool | Route |
 | --- | --- |
 | Sodium balance & replacement (FWD, hypo/hypernatremia infusion guidance) | `/sodium-balance` |
 | Hyperglycemia sodium correction | `/hyperglycemia-sodium-correction` |
-| Renal electrolyte indices (TRP, CCR, spot UCa/UCr, TTKG) | `/renal-electrolytes` |
 | Calcium correction for albumin | `/calcium-albumin` |
+| Maintenance IVF (Holliday–Segar) | `/maintenance-ivf` |
 
-Legacy routes `/trp` and `/ccr` redirect to `/renal-electrolytes`.
-
-### Diabetes (`/calculators/diabetes`)
+### Insulin/Glucose (`/calculators/diabetes`)
 
 | Tool | Route |
 | --- | --- |
 | A1c ↔ GMI ↔ fructosamine ↔ eAG (Cohen et al. preferred; Young et al. alternate) | `/a1c-converter` |
 | Insulin MDI → sliding scale (ISS) | `/insulin-mdi-iss` |
 | Diluted ISS generation | `/insulin-diluted-iss` |
-
-### Fluids & nutrition (`/calculators`)
-
-| Tool | Route |
-| --- | --- |
-| Maintenance IVF (Holliday–Segar) | `/maintenance-ivf` |
+| TDD estimator and MDI calculator — bolus (½/whole U) or TDD / % basal / ISF / ICR | `/tdd-mdi` |
 | Glucose infusion rate — IV and enteral | `/gir` |
+| Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, Matsuda (optional OGTT) | `/insulin-resistant-indices` |
+| Glycemia Risk | Coming soon |
 
-### General pediatrics (`/calculators`)
+### Adrenal (`/calculators/adrenal`)
 
 | Tool | Route |
 | --- | --- |
 | BSA (Haycock or Costeff weight-only) & steroid potency wean/converter | `/bsa-steroid` |
-| Pediatric hypertensive BP percentiles (AAP 2017) | `/pediatric-bp` |
 | 17OHP Intrepretation in Prematurity (Olgemöller 2003 and Pode-Shakked 2018) | `/cah-screening` |
+| XY DSD Steroid Panel — post-hCG T/DHT, T/Δ4A, ASI; Esoterix T/DHT/Δ4A conversion | `/xy-dsd-steroid-panel` |
 
+### Gonad Auxology (`/calculators/gonad-auxology`)
 
+| Tool | Route |
+| --- | --- |
+| Stretched penile length (newborn) — Halil et al. and Feldman/Aaronson nomograms | `/spl-newborn` |
+| Stretched penile length (child) — Bulgarian, Schonfeld, and Feldman references | `/spl-child` |
+| Clitoral length/width (neonate) — Alaei et al. nomogram | `/clitoral-dimension` |
+| Uterine / ovarian SDS — Gilligan 2019 pelvic US mean±SD | `/uterine-ovary-sds` |
 
+Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology`.
 
-### Gonad auxology (`/calculators/gonad-auxology`)
+### Outpatient Endocrinology (`/calculators/outpatient-endocrinology`)
 
+| Tool | Route |
+| --- | --- |
+| Pediatric hypertensive BP percentiles (AAP 2017) | `/pediatric-bp` |
+| Long-Acting GH IGF Correction — Table 2 SDS timing factors (Ngenla / Skytrofa / Sogroya) | `/lagh-igf-correction` |
+| IGF-1 / IGFBP-3 Z-score — multi-assay SDS + optional Tanner/SMR | `/igf1-zscore-roche` |
+| GH dosing — Initiate & Titrate (daily/weekly; doses/week schedule; obese Costeff/Mosteller BSA; indication start ranges; calculated vs pen dose; selectable pen strengths with exact/rounded 28-day supply) | `/gh-dosing` |
+| Growth Velocity SDS — infant WHO–Tanner (≤5.9 y) or pediatric HV both ancestries (>5.9 y) | `/gv-sds` |
+| Levothyroxine dosing — age-based mcg/kg; optional BSA (100 mcg/m²) after 1 y | `/levothyroxine-dosing` |
+| Anthropometric measurements | Coming soon |
+| Physical Exam Staging Guide | Coming soon |
 
-| Tool                                                                           | Route                 |
-| ------------------------------------------------------------------------------ | --------------------- |
-| Stretched penile length (newborn) — Halil et al. and Feldman/Aaronson nomograms | `/spl-newborn`        |
-| Stretched penile length (child) — Bulgarian, Schonfeld, and Feldman references | `/spl-child`          |
-| Clitoral length/width (neonate) — Alaei et al. nomogram                        | `/clitoral-dimension` |
+### Bone Health (`/calculators/bone-health`)
+
+| Tool | Route |
+| --- | --- |
+| Renal electrolyte indices (TRP, CCR, spot UCa/UCr, TTKG) | `/renal-electrolytes` |
+| Calcium dosing (enteral / parenteral) | `/calcium-dosing` |
+| DXA BMD Interpretation | `/dxa-bmd-interpretation` |
+| Bone Turnover labs | Coming soon |
+
+Legacy routes `/trp` and `/ccr` redirect to `/renal-electrolytes`.
+
+### Lab Assays (`/calculators/lab-assays`)
+
+| Tool | Route |
+| --- | --- |
+| Esoterix lab search/conversion | `/esoterix-labs` |
+
+### PEARLS (`/calculators/pearls`) — planned; hub hidden in CALCS UI
+
+| Tool | Route |
+| --- | --- |
+| Hormone and Receptor review | Coming soon |
+| Genes and Genetics | Coming soon (`data/calc/genes-genetics.csv`) |
+
+Collection meaning: Peds Endo Applied Review & Learning Strategies. Catalog entries remain in code for a future hub; not listed on `/calculators` until promoted (see `predeployPHYSIS.md`).
 
 
 ## Planned Updates
@@ -89,23 +122,17 @@ Legacy routes `/trp` and `/ccr` redirect to `/renal-electrolytes`.
 - [ ] PHYSIS / CALCS logo
 - [ ] Google Analytics optimization for search and reach
 - [ ] RedCAP pre-test cohort data (PES survey dispersal)
+- [ ] PEARLS learning suite (stim-test interpretation; DKA fluids / new-onset T1DM TDD; parathyroidectomy guideline)
 
 ### Patch polish
 
 - [ ] QC / “show calculations” footer for each tool
 - [ ] Clean up footer text into info tooltips; references in copy-paste output
 - [ ] Confirm copy-paste functionality for each calculator
-- [ ] UD radius / DXA BMD scoring tools
-- [ ] Consider better calculator organization by organ system
 
 ### Calculators to add or consider
 
-- [ ] Elemental calcium calculator (salt ↔ elemental and dosage)
 - [ ] Consider tools from [EndoBora](https://www.endobora.com/?lang=en) (syndrome criteria; SMR/Tanner, Prader/Quigley/Sinnecker/FGS scoring)
-- [ ] ESOTERIX lab values search tool (`.md`) and unit converter
-- [ ] IGF-1 LMS/SMS (Z-score) calculator — Roche, Esoterix, Severance references in `data/references/`
-- [ ] Esoterix/Labcorp IGF-1 SMS scraper for LMS quantiles
-- [ ] Time-based IGF-1 interpretation calculator for long-acting GH
 - [ ] Consider TSPED website features ([ceddcozum](https://www.ceddcozum.com/))
 
 ## Changelog
@@ -128,7 +155,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Bone age calculator UX — stage slider, image preloading, and layout improvements
 - [x] TW3 workflow — Ulna-first landmark order (Ulna → Radius → thumb → 3/5 groups), dedicated Enter to save stage and advance, mobile two-column layout with vertical slider under the hand XR map
 - [x] CDC growth chart viewer — click chart to open zoom/pan/print window with margin legend
-- [x] TW3 RedCAP survey prompts — pre-test QR in stage panel before sex selected; post-test QR on TW3 bone-age result card until continue to APH
+- [x] TW3 RedCAP survey prompts — pre-test QR in stage panel before sex selected; post-test QR on TW3 bone-age result card until continue to APH; QR images open the RedCAP survey URL
 - [x] TW3 chronological age “from DOB” — XR date − DOB, rounded to nearest year-month
 
 ### Electrolytes & calcium
@@ -141,6 +168,8 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Renal electrolyte panel — TRP, CCR, spot UCa/UCr, and TTKG from paired serum/urine labs with result interpretation tooltips
 - [x] Spot UCa/UCr ratio with age-based 95th-percentile guidance and nephrocalcinosis flags
 - [x] Renal less-than assay estimates — SCr &lt;0.15, UCa &lt;5, UCr &lt;13 checkboxes; inequality bounds with Bayesian probabilities when available; optional 24h Ca max from censored UCa/UCr (Costeff/Haycock); dilute UCr rule-in for TRP and spot UCa/UCr (CCR stays invalid)
+- [x] DXA BMD Interpretation — aBMD_HAZ (spine), TBLH BMC-for-actual-weight and BMC-for-lean-mass (ALPHABET Hologic), UD radius aBMD Z; race-neutral (Zemel 2025) vs race-specific (Zemel 2011 / Kalkwarf 2022); MULT height HAZ
+- [x] Calcium dosing (enteral / parenteral) — bidirectional salt ↔ elemental Ca by weight and doses/day; formulation tips; range recommendations and collapsed calcitriol adjunct
 
 ### Diabetes & nutrition
 
@@ -150,6 +179,8 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Diluted ISS generation
 - [x] Maintenance IVF (mIVF) — Holliday–Segar calculations
 - [x] GIR calculator — IV and enteral, with combined total
+- [x] Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, and Matsuda; OGTT optional; adult / pediatric / SMR cut-offs; pediatric DM-diagnosis disclaimer
+- [x] TDD estimator and MDI calculator — meal + correction bolus (target 100 mg/dL; correction 0 if BG &lt; 100; round to ½ and whole units) or TDD / % basal (~40% recommended) / 1500 ISF / 500 ICR / 60 g meal ICRs from breakfast–dinner + Lantus
 
 ### General pediatrics
 
@@ -160,8 +191,16 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] BSA input method labels and Costeff/Haycock formula hints on `/bsa-steroid`
 - [x] Steroid wean calculator / potency converter
 - [x] Steroid wean dosing refinements — equal-preferred PO splits (1.25 mg), anesthesia/severe-illness rounding (5 mg PO / whole-mg IV), transition mg/day + mg/m² display, and short wean-only clinical copy
+- [x] XY DSD Steroid Panel — post-hCG T/DHT (SRD5A2) and T/Δ4A (17β-HSD3) ratios with literature cutoffs; optional ASI (LH × T); Esoterix unit conversion for T, DHT, and Δ4A; AMH/USP/genetics amber disclaimer
 - [x] Gonad auxology — SPL (newborn and child) and clitoral dimension nomograms with reference charts
 - [x] Gonad auxology — click-to-enlarge zoomable nomograms; Feldman newborn GA reference; Feldman child −2.5 SD threshold; corrected Feldman percentile derivation from mean ± SD
+- [x] Uterine / ovarian SDS — Gilligan 2019 Table 1/2/3 mean±SD Z-scores; ellipsoid volume; cycle-week overlay ≥12 y
+- [x] Long-Acting GH IGF Correction — Table 2 SDS timing factors for somatrogon (Ngenla), lonapegsomatropin (Skytrofa), and somapacitan (Sogroya); Outpatient Endocrinology collection
+- [x] IGF-1 Z-score (Roche Elecsys) — age- and sex-specific 2.5/50/97.5% quantile SDS
+- [x] IGF-1 / IGFBP-3 Z-score — Bidlingmaier LMS, Jo Liaison/Immulite, Roche IGF-1 & IGFBP-3; optional Wit Tanner/SMR (age ≤21 y)
+- [x] GH dosing — Initiate & Titrate (daily/weekly Brand (generic) formulations; formulation requires explicit selection; Doses/Week 3/4/6/7 for daily Initiate with mg/dose · mg/week · mg/kg/week results and schedule-aware 28-day supply; weekly LAGH titrate steps ±0.02/±0.04 mg/kg/dose with IGF timing notice; daily titrate early results when weight+dose ready with `??` flag placeholders; Obese track picker for current weight / IBW / LBM / Costeff or Mosteller BSA; BSA schema 4.5±1 mg/m²/week max 7.5/9.5 Turner; indication start-dose ranges; calculated vs pen-delivered dose; selectable pen strengths with exact and rounded-up 28-day supply plus max-dose / split-dose alerts; CA/BA as years+months or decimal; titrate flag cards with mean±SD GV + ancestry, IGF-1 SDS tones, residual-growth N/A, male AI card OR logic)
+- [x] Growth Velocity SDS — age via years+months / total months / today−DOB; WHO–Tanner infant 12-month tables (≤5.9 y); pediatric HV SDS for both ancestries (>5.9 y); adequacy band colors with stim-test tooltip on low bands
+- [x] Levothyroxine dosing — age-band mcg/kg once daily; newborn cardiac/low-T4 start snaps; optional BSA dosing (100 mcg/m²) after 1 y with direct / Costeff / Mosteller
 
 ### Platform & data
 
@@ -174,9 +213,13 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta)
 - [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
+- [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
 - [x] Public community repo (`doctor-dom/physis-calc`) — header Issues/Discussions/Planned Updates links; parallel Actions workflow syncs a community-safe README
 - [x] Persistent footer Terms of Use link (`/terms-of-use`) sharing the disclaimer banner, with UTC last-updated timestamp
+- [x] CALCS collections reorganized — Electrolytes/Fluids, Insulin/Glucose, Adrenal, Gonad Auxology, Outpatient Endocrinology, Bone Health, Lab Assays; coming-soon placeholders; renal-electrolytes under Bone Health; PEARLS documented but hub hidden until promoted; legacy `/calculators/normograms` redirects to gonad-auxology
+- [x] CALCS calculator chrome — back link to the active collection roster and Reset fields (remount) under the brand/GitHub header
+- [x] Esoterix lab search/conversion — search by name/alias/code; seven category chips (Adrenal, HPG, Thyroid, Growth, Adrenal Medulla, Bone Health, Diabetes/Glycemia); expandable expected-value cards; SI ↔ mass conversion; Labcorp PDF link (`/esoterix-labs`)
 
 ## Clinical notes
 
