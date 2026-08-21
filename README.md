@@ -14,7 +14,7 @@ Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and 
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
-**Current release:** **v7.0.0** (21 Aug 2026) — large master merge of calculator feature branches (GH/IGF/GV, Esoterix, DXA, calcium, levothyroxine, uterine/ovary SDS, XY DSD steroid panel, TDD/MDI, and CALCS collections).
+**Current release:** **v0.7.0** (21 Aug 2026) — master merge of calculator feature branches (GH/IGF/GV, Esoterix, DXA, calcium, levothyroxine, uterine/ovary SDS, XY DSD steroid panel, TDD/MDI, and CALCS collections).
 
 ## Primary workflow: growth & height prediction
 
@@ -212,8 +212,8 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Scheduled midnight UTC GitHub sync — Worker compares `master` SHA and dispatches deploy when changed
 - [x] GitHub Actions deploy workflow (Node 22 build; checkout/setup-node v5)
 - [x] Release planning checklist moved from `predeployPHYSIS.txt` to `predeployPHYSIS.md`
-- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (beta used `0.y.x`; current release is **v7.0.0**)
-- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; current **v7.0.0**, 21 Aug 2026)
+- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.7.0**)
+- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; current **v0.7.0**, 21 Aug 2026)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
