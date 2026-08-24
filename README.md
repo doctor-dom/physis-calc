@@ -14,7 +14,7 @@ Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and 
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
-**Current release:** **v0.7.0** (21 Aug 2026) — master merge of calculator feature branches (GH/IGF/GV, Esoterix, DXA, calcium, levothyroxine, uterine/ovary SDS, XY DSD steroid panel, TDD/MDI, and CALCS collections).
+**Current release:** **v0.7.1** (22 Aug 2026) — CALCS collection copy refresh (XY DSD under Gonad Auxology and DSD; hub blurbs); A1c converter layout fix.
 
 ## Primary workflow: growth & height prediction
 
@@ -45,6 +45,7 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 | Hyperglycemia sodium correction | `/hyperglycemia-sodium-correction` |
 | Calcium correction for albumin | `/calcium-albumin` |
 | Maintenance IVF (Holliday–Segar) | `/maintenance-ivf` |
+| Glucose infusion rate — IV and enteral | `/gir` |
 
 ### Insulin/Glucose (`/calculators/diabetes`)
 
@@ -54,7 +55,6 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 | Insulin MDI → sliding scale (ISS) | `/insulin-mdi-iss` |
 | Diluted ISS generation | `/insulin-diluted-iss` |
 | TDD estimator and MDI calculator — bolus (½/whole U) or TDD / % basal / ISF / ICR | `/tdd-mdi` |
-| Glucose infusion rate — IV and enteral | `/gir` |
 | Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, Matsuda (optional OGTT) | `/insulin-resistant-indices` |
 | Glycemia Risk | Coming soon |
 
@@ -64,9 +64,8 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 | --- | --- |
 | BSA (Haycock or Costeff weight-only) & steroid potency wean/converter | `/bsa-steroid` |
 | 17OHP Intrepretation in Prematurity (Olgemöller 2003 and Pode-Shakked 2018) | `/cah-screening` |
-| XY DSD Steroid Panel — post-hCG T/DHT, T/Δ4A, ASI; Esoterix T/DHT/Δ4A conversion | `/xy-dsd-steroid-panel` |
 
-### Gonad Auxology (`/calculators/gonad-auxology`)
+### Gonad Auxology and DSD (`/calculators/gonad-auxology`)
 
 | Tool | Route |
 | --- | --- |
@@ -74,6 +73,7 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 | Stretched penile length (child) — Bulgarian, Schonfeld, and Feldman references | `/spl-child` |
 | Clitoral length/width (neonate) — Alaei et al. nomogram | `/clitoral-dimension` |
 | Uterine / ovarian SDS — Gilligan 2019 pelvic US mean±SD | `/uterine-ovary-sds` |
+| XY DSD Steroid Panel — post-hCG T/DHT, T/Δ4A, ASI; Esoterix T/DHT/Δ4A conversion | `/xy-dsd-steroid-panel` |
 
 Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology`.
 
@@ -212,8 +212,8 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Scheduled midnight UTC GitHub sync — Worker compares `master` SHA and dispatches deploy when changed
 - [x] GitHub Actions deploy workflow (Node 22 build; checkout/setup-node v5)
 - [x] Release planning checklist moved from `predeployPHYSIS.txt` to `predeployPHYSIS.md`
-- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.7.0**)
-- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; current **v0.7.0**, 21 Aug 2026)
+- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.7.1**)
+- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; current **v0.7.1**, 22 Aug 2026)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
