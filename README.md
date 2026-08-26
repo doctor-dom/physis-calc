@@ -56,7 +56,8 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 | Diluted ISS generation | `/insulin-diluted-iss` |
 | TDD estimator and MDI calculator — bolus (½/whole U) or TDD / % basal / ISF / ICR | `/tdd-mdi` |
 | Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, Matsuda (optional OGTT) | `/insulin-resistant-indices` |
-| Glycemia Risk | Coming soon |
+| MODY Clinical Calculator — at diagnosis (age &lt; 20) or Exeter post-6-month PPV (≤35 y) | `/mody-clinical-calculator` |
+| Glycemia Risk Index (GRI) Calculator — AGP % → TIR, GRI, hypo/hyper components, zones A–E | `/glycemia-risk-index` |
 
 ### Adrenal (`/calculators/adrenal`)
 
@@ -96,6 +97,7 @@ Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology
 | --- | --- |
 | Renal electrolyte indices (TRP, CCR, spot UCa/UCr, TTKG) | `/renal-electrolytes` |
 | Calcium dosing (enteral / parenteral) | `/calcium-dosing` |
+| Figueras-Aloy MBDP risk-score | `/figueras-aloy-mbdp` |
 | DXA BMD Interpretation | `/dxa-bmd-interpretation` |
 | Bone Turnover labs | Coming soon |
 
@@ -172,6 +174,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Renal less-than assay estimates — SCr &lt;0.15, UCa &lt;5, UCr &lt;13 checkboxes; inequality bounds with Bayesian probabilities when available; optional 24h Ca max from censored UCa/UCr (Costeff/Haycock); dilute UCr rule-in for TRP and spot UCa/UCr (CCR stays invalid)
 - [x] DXA BMD Interpretation — aBMD_HAZ (spine), TBLH BMC-for-actual-weight and BMC-for-lean-mass (ALPHABET Hologic), UD radius aBMD Z; race-neutral (Zemel 2025) vs race-specific (Zemel 2011 / Kalkwarf 2022); MULT height HAZ
 - [x] Calcium dosing (enteral / parenteral) — bidirectional salt ↔ elemental Ca by weight and doses/day; formulation tips; range recommendations and collapsed calcitriol adjunct
+- [x] Figueras-Aloy MBDP risk-score — ALP + phosphorus → Models E (4-group) and I (3-group); Bone Health collection
 
 ### Diabetes & nutrition
 
@@ -182,6 +185,8 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Maintenance IVF (mIVF) — Holliday–Segar calculations
 - [x] GIR calculator — IV and enteral, with combined total
 - [x] Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, and Matsuda; OGTT optional; adult / pediatric / SMR cut-offs; pediatric DM-diagnosis disclaimer
+- [x] MODY Clinical Calculator — Shields 2024 at-diagnosis (age &lt; 20; Table S6 ± Abs) and Exeter 2012 post-6-month PPV (diagnosis ≤35; T1/T2 branch)
+- [x] Glycemia Risk Index (GRI) Calculator — CGM AGP % (Very High / High / Low / Very Low), derived TIR, hypo/hyper components, capped GRI, zones A–E, GRI Grid (Klonoff et al. 2023)
 - [x] TDD estimator and MDI calculator — meal + correction bolus (target 100 mg/dL; correction 0 if BG &lt; 100; round to ½ and whole units) or TDD / % basal (~40% recommended) / 1500 ISF / 500 ICR / 60 g meal ICRs from breakfast–dinner + Lantus
 
 ### General pediatrics
