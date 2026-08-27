@@ -14,7 +14,7 @@ Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and 
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
-**Current release:** **v0.7.1** (22 Aug 2026) — CALCS collection copy refresh (XY DSD under Gonad Auxology and DSD; hub blurbs); A1c converter layout fix.
+**Current release:** **v0.7.4** (26 Aug 2026) — Anthropometric ratio tools (SHOX/Turner screening and achondroplasia SDS).
 
 ## Primary workflow: growth & height prediction
 
@@ -37,59 +37,13 @@ The main workflow (`/growth`) guides TW3-RUS bone age scoring through adult heig
 
 **C**omprehensive **A**ction-**L**everaging **C**alculator **S**uite
 
-### Electrolytes/Fluids (`/calculators/electrolytes`)
-
-| Tool | Route |
-| --- | --- |
-| Sodium balance & replacement (FWD, hypo/hypernatremia infusion guidance) | `/sodium-balance` |
-| Hyperglycemia sodium correction | `/hyperglycemia-sodium-correction` |
-| Calcium correction for albumin | `/calcium-albumin` |
-| Maintenance IVF (Holliday–Segar) | `/maintenance-ivf` |
-| Glucose infusion rate — IV and enteral | `/gir` |
-
-### Insulin/Glucose (`/calculators/diabetes`)
-
-| Tool | Route |
-| --- | --- |
-| A1c ↔ GMI ↔ fructosamine ↔ eAG (Cohen et al. preferred; Young et al. alternate) | `/a1c-converter` |
-| Insulin MDI → sliding scale (ISS) | `/insulin-mdi-iss` |
-| Diluted ISS generation | `/insulin-diluted-iss` |
-| TDD estimator and MDI calculator — bolus (½/whole U) or TDD / % basal / ISF / ICR | `/tdd-mdi` |
-| Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, Matsuda (optional OGTT) | `/insulin-resistant-indices` |
-| MODY Clinical Calculator — at diagnosis (age &lt; 20) or Exeter post-6-month PPV (≤35 y) | `/mody-clinical-calculator` |
-| Glycemia Risk Index (GRI) Calculator — AGP % → TIR, GRI, hypo/hyper components, zones A–E | `/glycemia-risk-index` |
-
-### Adrenal (`/calculators/adrenal`)
+### Adrenals/ Sex Steroids (`/calculators/adrenal`)
 
 | Tool | Route |
 | --- | --- |
 | BSA (Haycock or Costeff weight-only) & steroid potency wean/converter | `/bsa-steroid` |
 | 17OHP Intrepretation in Prematurity (Olgemöller 2003 and Pode-Shakked 2018) | `/cah-screening` |
-
-### Gonad Auxology and DSD (`/calculators/gonad-auxology`)
-
-| Tool | Route |
-| --- | --- |
-| Stretched penile length (newborn) — Halil et al. and Feldman/Aaronson nomograms | `/spl-newborn` |
-| Stretched penile length (child) — Bulgarian, Schonfeld, and Feldman references | `/spl-child` |
-| Clitoral length/width (neonate) — Alaei et al. nomogram | `/clitoral-dimension` |
-| Uterine / ovarian SDS — Gilligan 2019 pelvic US mean±SD | `/uterine-ovary-sds` |
 | XY DSD Steroid Panel — post-hCG T/DHT, T/Δ4A, ASI; Esoterix T/DHT/Δ4A conversion | `/xy-dsd-steroid-panel` |
-
-Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology`.
-
-### Outpatient Endocrinology (`/calculators/outpatient-endocrinology`)
-
-| Tool | Route |
-| --- | --- |
-| Pediatric hypertensive BP percentiles (AAP 2017) | `/pediatric-bp` |
-| Long-Acting GH IGF Correction — Table 2 SDS timing factors (Ngenla / Skytrofa / Sogroya) | `/lagh-igf-correction` |
-| IGF-1 / IGFBP-3 Z-score — multi-assay SDS + optional Tanner/SMR | `/igf1-zscore-roche` |
-| GH dosing — Initiate & Titrate (daily/weekly; doses/week schedule; obese Costeff/Mosteller BSA; indication start ranges; calculated vs pen dose; selectable pen strengths with exact/rounded 28-day supply) | `/gh-dosing` |
-| Growth Velocity SDS — infant WHO–Tanner (≤5.9 y) or pediatric HV both ancestries (>5.9 y) | `/gv-sds` |
-| Levothyroxine dosing — age-based mcg/kg; optional BSA (100 mcg/m²) after 1 y | `/levothyroxine-dosing` |
-| Anthropometric measurements | Coming soon |
-| Physical Exam Staging Guide | Coming soon |
 
 ### Bone Health (`/calculators/bone-health`)
 
@@ -103,7 +57,59 @@ Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology
 
 Legacy routes `/trp` and `/ccr` redirect to `/renal-electrolytes`.
 
-### Lab Assays (`/calculators/lab-assays`)
+### Diabetes (`/calculators/diabetes`)
+
+| Tool | Route |
+| --- | --- |
+| A1c ↔ GMI ↔ fructosamine ↔ eAG (Cohen et al. preferred; Young et al. alternate) | `/a1c-converter` |
+| Insulin MDI → sliding scale (ISS) | `/insulin-mdi-iss` |
+| Diluted ISS generation | `/insulin-diluted-iss` |
+| TDD estimator and MDI calculator — bolus (½/whole U) or TDD / % basal / ISF / ICR | `/tdd-mdi` |
+| Insulin Resistant Indices — HOMA-IR, QUICKI, SPISE, Matsuda (optional OGTT) | `/insulin-resistant-indices` |
+| MODY Clinical Calculator — at diagnosis (age &lt; 20) or Exeter post-6-month PPV (≤35 y) | `/mody-clinical-calculator` |
+| Glycemia Risk Index (GRI) Calculator — AGP % → TIR, GRI, hypo/hyper components, zones A–E | `/glycemia-risk-index` |
+
+### Electrolytes/Fluids (`/calculators/electrolytes`)
+
+| Tool | Route |
+| --- | --- |
+| Sodium balance & replacement (FWD, hypo/hypernatremia infusion guidance) | `/sodium-balance` |
+| Hyperglycemia sodium correction | `/hyperglycemia-sodium-correction` |
+| Calcium correction for albumin | `/calcium-albumin` |
+| Maintenance IVF (Holliday–Segar) | `/maintenance-ivf` |
+| Glucose infusion rate — IV and enteral | `/gir` |
+
+### Gonad Auxology (`/calculators/gonad-auxology`)
+
+| Tool | Route |
+| --- | --- |
+| Stretched penile length (newborn) — Halil et al. and Feldman/Aaronson nomograms | `/spl-newborn` |
+| Stretched penile length (child) — Bulgarian, Schonfeld, and Feldman references | `/spl-child` |
+| Clitoral length/width (neonate) — Alaei et al. nomogram | `/clitoral-dimension` |
+| Uterine / ovarian SDS — Gilligan 2019 pelvic US mean±SD | `/uterine-ovary-sds` |
+
+Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology`.
+
+### Outpatient Auxology (`/calculators/outpatient-auxology`)
+
+| Tool | Route |
+| --- | --- |
+| Pediatric hypertensive BP percentiles (AAP 2017) | `/pediatric-bp` |
+| Growth Velocity SDS — infant WHO–Tanner (≤5.9 y) or pediatric HV both ancestries (>5.9 y) | `/gv-sds` |
+| Anthropometric ratio tools — SHOX/XO sit–stand and arm-span screening; ACH SH/LL SDS | `/anthropometric-ratio-tools` |
+| Diagnosis-Specific Growth — Shyr GAMLSS condition height SDS/%ile (2–20 y; optional unaffected overlay) | `/diagnosis-specific-growth` |
+| Physical Exam Staging Guide | Coming soon |
+
+### Outpatient Endocrinology (`/calculators/outpatient-endocrinology`)
+
+| Tool | Route |
+| --- | --- |
+| Long-Acting GH IGF Correction — Table 2 SDS timing factors (Ngenla / Skytrofa / Sogroya) | `/lagh-igf-correction` |
+| IGF-1 / IGFBP-3 Z-score — multi-assay SDS + optional Tanner/SMR | `/igf1-zscore-roche` |
+| GH dosing — Initiate & Titrate (daily/weekly; doses/week schedule; obese Costeff/Mosteller BSA; indication start ranges; calculated vs pen dose; selectable pen strengths with exact/rounded 28-day supply) | `/gh-dosing` |
+| Levothyroxine dosing — age-based mcg/kg; optional BSA (100 mcg/m²) after 1 y | `/levothyroxine-dosing` |
+
+### Lab References (`/calculators/lab-assays`)
 
 | Tool | Route |
 | --- | --- |
@@ -136,6 +142,7 @@ Collection meaning: Peds Endo Applied Review & Learning Strategies. Catalog entr
 
 ### Calculators to add or consider
 
+- [ ] Quick SGA/AGA/LGA determination tool (Outpatient Auxology)
 - [ ] Consider tools from [EndoBora](https://www.endobora.com/?lang=en) (syndrome criteria; SMR/Tanner, Prader/Quigley/Sinnecker/FGS scoring)
 - [ ] Consider TSPED website features ([ceddcozum](https://www.ceddcozum.com/))
 
@@ -159,6 +166,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Bone age calculator UX — stage slider, image preloading, and layout improvements
 - [x] TW3 workflow — Ulna-first landmark order (Ulna → Radius → thumb → 3/5 groups), dedicated Enter to save stage and advance, mobile two-column layout with vertical slider under the hand XR map
 - [x] CDC growth chart viewer — click chart to open zoom/pan/print window with margin legend
+- [x] Diagnosis-Specific Growth — Shyr et al. GAMLSS condition height-for-age SDS/percentile (ages 2–20; Plotly-extracted centiles + SI-digitized CF; optional study unaffected overlay); human QC of `scripts/output/dx-growth/qc/` vs SI/Shiny signed off 2026-08-27
 - [x] TW3 RedCAP survey prompts — pre-test QR in stage panel before sex selected; post-test QR on TW3 bone-age result card until continue to APH; QR images open the RedCAP survey URL
 - [x] TW3 chronological age “from DOB” — XR date − DOB, rounded to nearest year-month
 
@@ -208,6 +216,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] GH dosing — Initiate & Titrate (daily/weekly Brand (generic) formulations; formulation requires explicit selection; Doses/Week 3/4/6/7 for daily Initiate with mg/dose · mg/week · mg/kg/week results and schedule-aware 28-day supply; weekly LAGH titrate steps ±0.02/±0.04 mg/kg/dose with IGF timing notice; daily titrate early results when weight+dose ready with `??` flag placeholders; Obese track picker for current weight / IBW / LBM / Costeff or Mosteller BSA; BSA schema 4.5±1 mg/m²/week max 7.5/9.5 Turner; indication start-dose ranges; calculated vs pen-delivered dose; selectable pen strengths with exact and rounded-up 28-day supply plus max-dose / split-dose alerts; CA/BA as years+months or decimal; titrate flag cards with mean±SD GV + ancestry, IGF-1 SDS tones, residual-growth N/A, male AI card OR logic)
 - [x] Growth Velocity SDS — age via years+months / total months / today−DOB; WHO–Tanner infant 12-month tables (≤5.9 y); pediatric HV SDS for both ancestries (>5.9 y); adequacy band colors with stim-test tooltip on low bands
 - [x] Levothyroxine dosing — age-band mcg/kg once daily; newborn cardiac/low-T4 start snaps; optional BSA dosing (100 mcg/m²) after 1 y with direct / Costeff / Mosteller
+- [x] Anthropometric ratio tools — SHOX/XO SH/H SDS > +1 (Fredriks), arm span/height < 96.5%, arm span − height ≤ −3 cm; ACH LL/SH/SH/H/SH/LL SDS (del Pino 2018 Tables 3–4)
 
 ### Platform & data
 
@@ -217,8 +226,8 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Scheduled midnight UTC GitHub sync — Worker compares `master` SHA and dispatches deploy when changed
 - [x] GitHub Actions deploy workflow (Node 22 build; checkout/setup-node v5)
 - [x] Release planning checklist moved from `predeployPHYSIS.txt` to `predeployPHYSIS.md`
-- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.7.1**)
-- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; current **v0.7.1**, 22 Aug 2026)
+- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.7.4**)
+- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; current **v0.7.4**, 26 Aug 2026)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
