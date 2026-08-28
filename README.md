@@ -14,7 +14,7 @@ Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and 
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
-**Current release:** **v0.8.0** (27 Aug 2026) — Per-branch pending release deltas with master apply and sibling sync.
+**Current release:** **v0.8.1** (28 Aug 2026) — Anthropometric sitting height SDS for sex/age (Fredriks 2005).
 
 ## Primary workflow: growth & height prediction
 
@@ -96,7 +96,7 @@ Legacy route `/calculators/normograms` redirects to `/calculators/gonad-auxology
 | --- | --- |
 | Pediatric hypertensive BP percentiles (AAP 2017) | `/pediatric-bp` |
 | Growth Velocity SDS — infant WHO–Tanner (≤5.9 y) or pediatric HV both ancestries (>5.9 y) | `/gv-sds` |
-| Anthropometric ratio tools — SHOX/XO sit–stand and arm-span screening; ACH SH/LL SDS | `/anthropometric-ratio-tools` |
+| Anthropometric ratio tools — SHOX/XO sit–stand and arm-span screening; sitting height SDS; ACH SH/LL SDS | `/anthropometric-ratio-tools` |
 | Diagnosis-Specific Growth — Shyr GAMLSS condition height SDS/%ile (2–20 y; optional unaffected overlay) | `/diagnosis-specific-growth` |
 | Physical Exam Staging Guide | Coming soon |
 
@@ -216,7 +216,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] GH dosing — Initiate & Titrate (daily/weekly Brand (generic) formulations; formulation requires explicit selection; Doses/Week 3/4/6/7 for daily Initiate with mg/dose · mg/week · mg/kg/week results and schedule-aware 28-day supply; weekly LAGH titrate steps ±0.02/±0.04 mg/kg/dose with IGF timing notice; daily titrate early results when weight+dose ready with `??` flag placeholders; Obese track picker for current weight / IBW / LBM / Costeff or Mosteller BSA; BSA schema 4.5±1 mg/m²/week max 7.5/9.5 Turner; indication start-dose ranges; calculated vs pen-delivered dose; selectable pen strengths with exact and rounded-up 28-day supply plus max-dose / split-dose alerts; CA/BA as years+months or decimal; titrate flag cards with mean±SD GV + ancestry, IGF-1 SDS tones, residual-growth N/A, male AI card OR logic)
 - [x] Growth Velocity SDS — age via years+months / total months / today−DOB; WHO–Tanner infant 12-month tables (≤5.9 y); pediatric HV SDS for both ancestries (>5.9 y); adequacy band colors with stim-test tooltip on low bands
 - [x] Levothyroxine dosing — age-band mcg/kg once daily; newborn cardiac/low-T4 start snaps; optional BSA dosing (100 mcg/m²) after 1 y with direct / Costeff / Mosteller
-- [x] Anthropometric ratio tools — SHOX/XO SH/H SDS > +1 (Fredriks), arm span/height < 96.5%, arm span − height ≤ −3 cm; ACH LL/SH/SH/H/SH/LL SDS (del Pino 2018 Tables 3–4)
+- [x] Anthropometric ratio tools — SHOX/XO SH/H SDS > +1 (Fredriks), arm span/height < 96.5%, arm span − height ≤ −3 cm; sitting height SDS for sex/age (Fredriks 2005); ACH LL/SH/SH/H/SH/LL SDS (del Pino 2018 Tables 3–4)
 
 ### Platform & data
 
@@ -226,9 +226,9 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Scheduled midnight UTC GitHub sync — Worker compares `master` SHA and dispatches deploy when changed
 - [x] GitHub Actions deploy workflow (Node 22 build; checkout/setup-node v5)
 - [x] Release planning checklist moved from `predeployPHYSIS.txt` to `predeployPHYSIS.md`
-- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.8.0**)
+- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.8.1**)
 - [x] Per-branch pending release deltas (`.release/pending/<branch-slug>.json`; `npm run release:pending:init|show|apply|sync-siblings`) — feature branches record one bump; master apply uses current latest tag; sibling sync brings `origin/master` into other open pending branches only (never merges them onto master; conflicts abort for discussion at that branch’s merge)
-- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; version **v0.8.0**; last-updated injected at build from HEAD commit date so every master push refreshes it)
+- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; version **v0.8.1**; last-updated injected at build from HEAD commit date so every master push refreshes it)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
