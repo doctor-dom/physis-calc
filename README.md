@@ -14,7 +14,7 @@ Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and 
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
-**Current release:** **v0.8.1** (28 Aug 2026) — Anthropometric sitting height SDS for sex/age (Fredriks 2005).
+**Current release:** **v0.8.2** (28 Aug 2026) — Disclaimer and Terms of Use pages sync from repo markdown.
 
 ## Primary workflow: growth & height prediction
 
@@ -226,14 +226,16 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Scheduled midnight UTC GitHub sync — Worker compares `master` SHA and dispatches deploy when changed
 - [x] GitHub Actions deploy workflow (Node 22 build; checkout/setup-node v5)
 - [x] Release planning checklist moved from `predeployPHYSIS.txt` to `predeployPHYSIS.md`
-- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.8.1**)
+- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.8.2**)
 - [x] Per-branch pending release deltas (`.release/pending/<branch-slug>.json`; `npm run release:pending:init|show|apply|sync-siblings`) — feature branches record one bump; master apply uses current latest tag; sibling sync brings `origin/master` into other open pending branches only (never merges them onto master; conflicts abort for discussion at that branch’s merge)
-- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; version **v0.8.1**; last-updated injected at build from HEAD commit date so every master push refreshes it)
+- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; version **v0.8.2**; last-updated injected at build from HEAD commit date so every master push refreshes it)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
 - [x] Public community repo (`doctor-dom/physis-calc`) — header Issues/Discussions/Planned Updates links; parallel Actions workflow syncs a community-safe README
 - [x] Persistent footer Terms of Use link (`/terms-of-use`) sharing the disclaimer banner, with UTC last-updated timestamp
+- [x] `/disclaimer` and `/terms-of-use` render from repo-root `Disclaimer.md` and [`ToU.md`](ToU.md) at Vite build/dev (synced on each master deploy)
+- [x] `ToU.md` `Last updated:` stamp synced from the file’s last content-edit time (`npm run legal:stamp` on commit / master push)
 - [x] CALCS collections reorganized — Electrolytes/Fluids, Insulin/Glucose, Adrenal, Gonad Auxology, Outpatient Endocrinology, Bone Health, Lab Assays; coming-soon placeholders; renal-electrolytes under Bone Health; PEARLS documented but hub hidden until promoted; legacy `/calculators/normograms` redirects to gonad-auxology
 - [x] CALCS calculator chrome — back link to the active collection roster and Reset fields (remount) under the brand/GitHub header
 - [x] Esoterix lab search/conversion — search by name/alias/code; seven category chips (Adrenal, HPG, Thyroid, Growth, Adrenal Medulla, Bone Health, Diabetes/Glycemia); expandable expected-value cards; SI ↔ mass conversion; Labcorp PDF link (`/esoterix-labs`)
