@@ -14,7 +14,7 @@ Please be sure to read the [Disclaimer](https://calc.dom.doctor/disclaimer) and 
 
 **P.H.Y.S.I.S. Production:** [https://calc.dom.doctor](https://calc.dom.doctor)
 
-**Current release:** **v0.7.6** (27 Aug 2026) — Header last-updated date injected from HEAD commit at build so every master push refreshes it.
+**Current release:** **v0.8.0** (27 Aug 2026) — Per-branch pending release deltas with master apply and sibling sync.
 
 ## Primary workflow: growth & height prediction
 
@@ -226,8 +226,9 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Scheduled midnight UTC GitHub sync — Worker compares `master` SHA and dispatches deploy when changed
 - [x] GitHub Actions deploy workflow (Node 22 build; checkout/setup-node v5)
 - [x] Release planning checklist moved from `predeployPHYSIS.txt` to `predeployPHYSIS.md`
-- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.7.6**)
-- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; version **v0.7.6**; last-updated injected at build from HEAD commit date so every master push refreshes it)
+- [x] Sequential release tagging script (`npm run release:tag`) using `vMAJOR.MINOR.PATCH` (`0.y.x` during beta; current **v0.8.0**)
+- [x] Per-branch pending release deltas (`.release/pending/<branch-slug>.json`; `npm run release:pending:init|show|apply|sync-siblings`) — feature branches record one bump; master apply uses current latest tag; sibling sync brings `origin/master` into other open pending branches only (never merges them onto master; conflicts abort for discussion at that branch’s merge)
+- [x] Header version + last-updated date above feedback icons (`src/data/appVersion.ts`; version **v0.8.0**; last-updated injected at build from HEAD commit date so every master push refreshes it)
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
