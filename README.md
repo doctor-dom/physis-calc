@@ -232,7 +232,7 @@ Completed work tracked in `predeployPHYSIS.md` ([x] items). That file replaced `
 - [x] Home header RedCAP survey links — logo + pre/post emoji links centered between title and GitHub feedback
 - [x] Mobile home header — compact RedCAP + GitHub feedback column to avoid icon overlap
 - [x] Improved PHYSIS favicon (`public/favicon-physis.png`) with cache-busting route favicon hook
-- [x] Public community repo (`doctor-dom/physis-calc`) — header Issues/Discussions/Planned Updates links; parallel Actions workflow syncs a community-safe README
+- [x] Public community repo (`doctor-dom/physis-calcs`) — header Issues/Discussions/Planned Updates links; parallel Actions workflow syncs a community-safe README
 - [x] Persistent footer Terms of Use link (`/terms-of-use`) sharing the disclaimer banner, with UTC last-updated timestamp
 - [x] `/disclaimer` and `/terms-of-use` render from repo-root `Disclaimer.md` and [`ToU.md`](ToU.md) at Vite build/dev (synced on each master deploy)
 - [x] `ToU.md` `Last updated:` stamp synced from the file’s last content-edit time (`npm run legal:stamp` on commit / master push)
